@@ -56,7 +56,17 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst formInput = document.getElementById('project-input').value;\nconst submitButton = document.getElementById('project-submit-button');\nconst projectList = document.getElementById('project-list');\n\nsubmitButton.addEventListener('click', () => {\n  const projectDiv = document.createElement('div');\n  projectDiv.textContent = formInput;\n  projectList.appendChild(projectDiv);\n})\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project */ \"./src/project.js\");\n\n\n// import createTask from './task'\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/project.js":
+/*!************************!*\
+  !*** ./src/project.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\nconst createProject = () => {\n\n  const submitButton = document.getElementById('project-submit-button');\n  const projectList = document.getElementById('project-list');\n  const form = document.getElementById('project-form')\n  \n  \n  submitButton.addEventListener('click', (e) => {\n    e.preventDefault();\n    const formInput = document.getElementById('project-input').value;\n    const projectDiv = document.createElement('div');\n    const divChild1 = document.createElement('h4');\n    const divChild2 = document.createElement('div');\n  \n    divChild2.innerHTML = `\n    <div class=\"d-flex\">\n    <form action=\"\" id=\"task-form\">\n      <input type=\"text\" id=\"task-input\">\n      <button type=\"submit\" id=\"task-button\">Add task</button>\n    </form>\n    <div id=\"task-list\"></div>\n  </div>`;\n\n  \n    projectDiv.appendChild(divChild1)\n    projectDiv.appendChild(divChild2)\n  \n    projectDiv.classList.add('d-flex');\n    projectDiv.setAttribute('data-tab-content', '')\n  \n    divChild1.textContent = formInput;\n    projectList.appendChild(projectDiv);\n    form.reset();\n  })\n  \n}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createProject);\n\n//# sourceURL=webpack://todo-list/./src/project.js?");
 
 /***/ })
 

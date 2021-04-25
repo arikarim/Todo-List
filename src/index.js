@@ -1,5 +1,4 @@
 import './style.css';
-import createTask from './task'
 import createProject from './project'
+import createTask from './task'
 createProject();
-createTask();
