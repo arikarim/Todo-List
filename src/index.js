@@ -1,2 +1,4 @@
 import './style.css';
-alert('great')
+
+const formInput = document.getElementById('project-input');
+const submitButton = document.getElementById('project-submit-button')
