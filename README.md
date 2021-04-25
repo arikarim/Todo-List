@@ -1,2 +1,2 @@
 # Todo-List
-lets begin
+lets begin the project
