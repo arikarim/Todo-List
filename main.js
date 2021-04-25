@@ -56,7 +56,7 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst formInput = document.getElementById('project-input').value;\nconst submitButton = document.getElementById('project-submit-button');\nconst projectList = document.getElementById('project-list');\n\nsubmitButton.addEventListener('click', () => {\n  const projectDiv = document.createElement('div');\n  projectDiv.textContent = formInput;\n  projectList.appendChild(projectDiv);\n})\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
 
 /***/ })
 
