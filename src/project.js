@@ -59,11 +59,21 @@ const createProject = () => {
     clearElement(listsContainer)
     renderLists()
 
+    const selectedList = lists.find(list => list.id === selectedListId)
     if (selectedListId == null ) {
       listDisplayContainer.style.display = 'none'
     } else {
       listDisplayContainer.style.display = ''
+      listTitleElement.innerText = selectedList.name
+      renderTaskCount(selectedList)
     }
+  }
+
+  function renderTaskCount(selectedListId) {
+    const incompleteTaskCount = selectedListId.tasks.filter(task =>
+      !task.complete).length
+    const taskString = incompleteTaskCount === 1 ? 'task' : 'tasks';
+    listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`
   }
 
   function renderLists() {
