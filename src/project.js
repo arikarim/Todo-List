@@ -1,4 +1,4 @@
-import { createList, createTask, clearElement} from './logic'
+import {renderLists, createList, createTask, clearElement, save, renderTaskCount} from './logic'
 
 const createProject = () => {
   const listsContainer = document.querySelector('[data-lists]');
@@ -20,16 +20,7 @@ const createProject = () => {
   let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
   let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY);
 
-  function save() {
-    localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists));
-    localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId);
-  }
 
-  function renderTaskCount(selectedListId) {
-    const incompleteTaskCount = selectedListId.tasks.filter((task) => !task.complete).length;
-    const taskString = incompleteTaskCount === 1 ? 'task' : 'tasks';
-    listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`;
-  }
 
   function renderTasks(selectedList) {
     selectedList.tasks.forEach((task) => {
@@ -46,18 +37,6 @@ const createProject = () => {
 
 
 
-  function renderLists() {
-    lists.forEach((list) => {
-      const listElement = document.createElement('li');
-      listElement.dataset.listId = list.id;
-      listElement.classList.add('list-name');
-      listElement.innerText = list.name;
-      if (list.id === selectedListId) {
-        listElement.classList.add('active-list');
-      }
-      listsContainer.appendChild(listElement);
-    });
-  }
 
   function render() {
     clearElement(listsContainer);
