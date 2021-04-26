@@ -1,4 +1,4 @@
-import {renderLists, createList, createTask, clearElement, save, renderTaskCount} from './logic'
+import {renderTaskCount, createList, createTask, clearElement} from './logic'
 
 const createProject = () => {
   const listsContainer = document.querySelector('[data-lists]');
@@ -20,6 +20,10 @@ const createProject = () => {
   let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
   let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY);
 
+  function save() {
+    localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists));
+    localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId);
+  }
 
 
   function renderTasks(selectedList) {
@@ -35,8 +39,18 @@ const createProject = () => {
     });
   }
 
-
-
+  function renderLists() {
+    lists.forEach((list) => {
+      const listElement = document.createElement('li');
+      listElement.dataset.listId = list.id;
+      listElement.classList.add('list-name');
+      listElement.innerText = list.name;
+      if (list.id === selectedListId) {
+        listElement.classList.add('active-list');
+      }
+      listsContainer.appendChild(listElement);
+    });
+  }
 
   function render() {
     clearElement(listsContainer);
