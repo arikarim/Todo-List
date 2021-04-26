@@ -1,4 +1,6 @@
-import {renderTaskCount, createList, createTask, clearElement} from './logic'
+import {
+  renderTaskCount, createList, createTask, clearElement,
+} from './logic';
 
 const createProject = () => {
   const listsContainer = document.querySelector('[data-lists]');
@@ -7,7 +9,6 @@ const createProject = () => {
   const deleteListButton = document.querySelector('[data-delete-list-button]');
   const listDisplayContainer = document.querySelector('[data-list-display-container]');
   const listTitleElement = document.querySelector('[data-list-title]');
-  const listCountElement = document.querySelector('[data-list-count]');
   const tasksContainer = document.querySelector('[data-tasks]');
   const taskTemplate = document.getElementById('task-template');
   const newTaskForm = document.querySelector('[data-new-task-form]');
@@ -24,7 +25,6 @@ const createProject = () => {
     localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists));
     localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId);
   }
-
 
   function renderTasks(selectedList) {
     selectedList.tasks.forEach((task) => {
@@ -101,8 +101,6 @@ const createProject = () => {
     selectedListId = null;
     saveRender();
   });
-
-
 
   newListForm.addEventListener('submit', (e) => {
     e.preventDefault();
