@@ -5,12 +5,19 @@ const createProject = () => {
   const listsContainer = document.querySelector('[data-lists]');
   const newListForm = document.querySelector('[data-new-list-form]')
   const newListinput = document.querySelector('[data-new-list-input]')
+  const deleteListButton = document.querySelector('[data-delete-list-button]')
 
   listsContainer.addEventListener('click', e => {
     if (e.target.tagName.toLowerCase() === 'li') {
       selectedListId = e.target.dataset.listId
       saveRender();
     }
+  })
+
+  deleteListButton.addEventListener('click', e => {
+    lists = lists.filter(list => list.id !== selectedListId)
+    selectedListId = null
+    saveRender()
   })
   
   const LOCAL_STORAGE_LIST_KEY = 'task.lists'
