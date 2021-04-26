@@ -10,12 +10,13 @@ A Todo list built with JavaScript that helps users organize their tasks
 ![image](./src/img/screen.png)
 
 
-[Live Demo Link](https://arikarim.github.io/Resturant-page/)
+[Live Demo Link](https://arikarim.github.io/Todo-List/)
 
 ## Built With
 
 - Javascript
 - Bootstrap
+- Css
 
 ## Prerequisities
 
