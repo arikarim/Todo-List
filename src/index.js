@@ -1,4 +1,4 @@
 import './style.css';
-import createProject from './project';
+import createProject from './modules/project';
 
 createProject();
