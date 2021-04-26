@@ -1,8 +1,5 @@
 const listCountElement = document.querySelector('[data-list-count]');
 
-const LOCAL_STORAGE_LIST_KEY = 'task.lists';
-const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListsId';
-
 function createList(name) {
   return { id: Date.now().toString(), name, tasks: [] };
 }
