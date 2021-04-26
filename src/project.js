@@ -1,3 +1,5 @@
+import { createList, createTask, clearElement} from './logic'
+
 const createProject = () => {
   const listsContainer = document.querySelector('[data-lists]');
   const newListForm = document.querySelector('[data-new-list-form]');
@@ -42,11 +44,7 @@ const createProject = () => {
     });
   }
 
-  function clearElement(element) {
-    while (element.firstChild) {
-      element.removeChild(element.firstChild);
-    }
-  }
+
 
   function renderLists() {
     lists.forEach((list) => {
@@ -111,13 +109,7 @@ const createProject = () => {
     saveRender();
   });
 
-  function createList(name) {
-    return { id: Date.now().toString(), name, tasks: [] };
-  }
 
-  function createTask(name) {
-    return { id: Date.now().toString(), name, complete: false };
-  }
 
   newListForm.addEventListener('submit', (e) => {
     e.preventDefault();
