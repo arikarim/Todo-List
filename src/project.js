@@ -6,6 +6,11 @@ const createProject = () => {
   const newListForm = document.querySelector('[data-new-list-form]')
   const newListinput = document.querySelector('[data-new-list-input]')
   const deleteListButton = document.querySelector('[data-delete-list-button]')
+  const listDisplayContainer = document.querySelector('[data-list-display-container]')
+  const listTitleElement = document.querySelector('[data-list-title]')
+  const listCountElement = document.querySelector('[data-list-count]')
+  const tasksContainer = document.querySelector('[data-tasks]')
+
 
   listsContainer.addEventListener('click', e => {
     if (e.target.tagName.toLowerCase() === 'li') {
@@ -52,6 +57,16 @@ const createProject = () => {
 
   function render() {
     clearElement(listsContainer)
+    renderLists()
+
+    if (selectedListId == null ) {
+      listDisplayContainer.style.display = 'none'
+    } else {
+      listDisplayContainer.style.display = ''
+    }
+  }
+
+  function renderLists() {
     lists.forEach(list => {
       const listElement = document.createElement('li');
       listElement.dataset.listId = list.id
