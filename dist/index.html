@@ -83,23 +83,14 @@
            </div>
            <!-- /task-2 -->
 
-           <div class="task">
-               <input 
-                 type="checkbox"
-                 id="task-3"
-               />
-               <label for="task-3">
-                 <span class="custom-checkbox"></span>
-                 a third task
-               </label>
-             </div>
              <!-- /task-3 -->
        </div>
 
        <div class="new-task-creator">
-           <form action="">
+           <form action="" data-new-task-form>
                <input 
                  type="text"
+                 data-new-task-input
                  class="new task"
                  placeholder="new task name"
                  aria-label="new task name"
@@ -117,6 +108,14 @@
 
   
    </div>
+   <template id="task-template">
+    <div class="task">
+      <input type="checkbox"/>
+      <label>
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+   </template>
 
   <script src="main.js"></script>
 </body>

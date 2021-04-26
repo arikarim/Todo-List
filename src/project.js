@@ -10,6 +10,9 @@ const createProject = () => {
   const listTitleElement = document.querySelector('[data-list-title]')
   const listCountElement = document.querySelector('[data-list-count]')
   const tasksContainer = document.querySelector('[data-tasks]')
+  const tasktemplate = document.getElementById('task-template')
+  const newTaskForm = document.querySelector('[data-new-task-form]')
+  const newTaskInput = document.querySelector('[data-new-task-input]')
 
 
   listsContainer.addEventListener('click', e => {
@@ -41,8 +44,24 @@ const createProject = () => {
     saveRender()
   })
 
+  newTaskForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const taskName = newTaskInput.value;
+    if(taskName == null || taskName === '') return
+    const task = createTask(taskName)
+    newTaskInput.value = null
+    const selectedList = lists.find(list => list.id === selectedListId)
+    selectedList.tasks.push(task)
+    saveRender()
+  })
+
   function createList(name) {
     return { id: Date.now().toString(), name: name, tasks: []}
+  }
+
+  function createTask(name) {
+    return { id: Date.now().toString(), name: name, complete: false }
+
   }
 
   function saveRender() {
@@ -66,7 +85,23 @@ const createProject = () => {
       listDisplayContainer.style.display = ''
       listTitleElement.innerText = selectedList.name
       renderTaskCount(selectedList)
+      clearElement(tasksContainer)
+      renderTasks(selectedList)
     }
+  }
+
+  function renderTasks(selectedList) {
+    selectedList.tasks.forEach(task => {
+      const taskElement = document.importNode(tasktemplate.content, true)
+      const checkbox = document.querySelector('input')
+      checkbox.id = task.id
+      checkbox.checked = task.complete
+      const label = document.querySelector('label')
+      label.htmlFor = task.id
+      label.append(task.name)
+
+      tasksContainer.appendChild(taskElement)
+    })
   }
 
   function renderTaskCount(selectedListId) {
