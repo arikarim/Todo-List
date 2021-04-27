@@ -15,8 +15,9 @@ A Todo list built with JavaScript that helps users organize their tasks
 ## Built With
 
 - Javascript
-- Bootstrap
 - Css
+- Bootstrap
+
 
 ## Prerequisities
 
