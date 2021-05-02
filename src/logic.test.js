@@ -1,5 +1,4 @@
-import {createList, createTask, clearElement} from './logic.js'
-
+import { createList, createTask, clearElement } from './logic';
 
 test('Check name', () => {
   expect(createTask('ari').name).toBe('ari');
@@ -26,7 +25,7 @@ test('Check createlist id', () => {
 });
 
 test('Check createlist id string', () => {
-  expect(typeof(createList('ari').id)).toBe("string");
+  expect(typeof (createList('ari').id)).toBe('string');
 });
 
 test('Check createlist id', () => {
@@ -34,12 +33,9 @@ test('Check createlist id', () => {
 });
 
 test('Check createlist id string', () => {
-  expect(typeof(createTask('ari').id)).toBe("string");
+  expect(typeof (createTask('ari').id)).toBe('string');
 });
 
 test('Check clear element', () => {
-  const listsContainer = document.querySelector('[data-lists]');
   expect(clearElement('listsContainer')).toBe(undefined);
 });
-
-

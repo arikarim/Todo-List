@@ -23,4 +23,3 @@ function renderTaskCount(selectedListId) {
 export {
   createList, createTask, clearElement, renderTaskCount,
 };
-
