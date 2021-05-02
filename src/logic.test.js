@@ -1,4 +1,4 @@
-import {createList, createTask, clearElement, renderTaskCount} from './logic.js'
+import {createList, createTask, clearElement} from './logic.js'
 
 
 test('Check name', () => {
@@ -17,8 +17,8 @@ test('Check createlist task', () => {
   expect(createList('ari').tasks).toStrictEqual([]);
 });
 
-test('Check createlist task', () => {
-  expect(createList('ari').tasks).toStrictEqual([]);
+test('Check clear element', () => {
+  expect(clearElement('li')).toBe(undefined);
 });
 
 
