@@ -4,7 +4,7 @@
   "description": "lets begin the project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack serve --open"
@@ -21,11 +21,15 @@
   },
   "homepage": "https://github.com/arikarim/Todo-List#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.6.3",
     "css-loader": "^5.2.4",
     "eslint": "^7.25.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3",
     "style-loader": "^2.0.0",
     "stylelint": "^13.13.0",
     "stylelint-config-standard": "^21.0.0",
