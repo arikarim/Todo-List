@@ -1,7 +1,6 @@
 # ToDo List
 
-A Todo list built with JavaScript that helps users organize their tasks
-
+A Todo list built with JavaScript helps users organize their tasks.
 ![Hireable](https://img.shields.io/badge/Hireable-yes-success) ![](https://img.shields.io/badge/Mobile--responsive-yes-green) ![](https://img.shields.io/badge/-Microverse%20projects-blueviolet)
 
 
