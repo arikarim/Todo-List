@@ -37,6 +37,14 @@ git clone `https://github.com/arikarim/Todo-List/tree/main`. It will clone the r
 
 - Open the index.html in the browser.
 
+## Run tests
+
+- open the terminal and run:
+
+```
+npm run test 
+```
+
 
 ## 🤝 contributing
 
