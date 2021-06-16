@@ -6,6 +6,8 @@ A Todo list built with JavaScript helps users organize their tasks.
 
 ## Screenshots of the app.
 
+
+
 ![image](./src/img/screen.png)
 
 
